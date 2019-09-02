@@ -13,14 +13,14 @@
  limitations under the License.
 */
 
-import path from 'path';
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
-import replace from 'rollup-plugin-replace';
-import {terser} from 'rollup-plugin-terser';
-import pkg from './package.json';
+const path = require('path');
+const babel = require('rollup-plugin-babel');
+const commonjs = require('rollup-plugin-commonjs-alternate');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const postcss = require('rollup-plugin-postcss');
+const replace = require('rollup-plugin-replace');
+const {terser} =require( 'rollup-plugin-terser');
+const pkg = require('./package.json');
 
 
 // NOTE: this value must be defined outside of the plugin because it needs
@@ -183,10 +183,11 @@ const nomoduleConfig = {
     clearScreen: false,
   },
 };
+module.exports = moduleConfig;
 
 const configs = [moduleConfig];
 if (process.env.NODE_ENV === 'production') {
   configs.push(nomoduleConfig);
 }
 
-export default configs;
+// export default configs;

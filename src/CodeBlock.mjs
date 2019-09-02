@@ -13,7 +13,7 @@
  limitations under the License.
 */
 
-import hljs from 'highlight.js/lib/highlight';
+import * as hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import React from 'react';
 
